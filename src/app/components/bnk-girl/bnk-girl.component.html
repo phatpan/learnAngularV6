@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [routerLink]="['/instagram', member.instagramId]">
   <img class="card-img-top" [src]="member.imgUrl" >
   <div class="card-body">
     <h4 class="card-title">{{member.name}}</h4>

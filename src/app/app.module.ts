@@ -13,7 +13,7 @@ import { InstagramComponent } from 'src/app/components/instagram/instagram.compo
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'instagram', component: InstagramComponent}
+  { path: 'instagram/:instagramId', component: InstagramComponent}
 ];
 
 @NgModule({
