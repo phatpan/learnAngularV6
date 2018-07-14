@@ -13,7 +13,7 @@ export class BnkService {
   constructor(private http: HttpClient) { }
 
   list():Observable<Member[]> {
-    return this.http.get<Member[]>("http://localhost:3000/bnk/members");
+    return this.http.get<Member[]>(`${environment.api_url}/bnk/members`);
   }
 
   instagram(id: string): Observable<Feed>{
