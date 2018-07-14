@@ -6,6 +6,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BnkGirlListComponent } from './components/bnk-girl-list/bnk-girl-list.component';
 import { BnkGirlComponent } from './components/bnk-girl/bnk-girl.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
+  { path: 'dashboard', component: DashboardComponent }
+];
 
 @NgModule({
   declarations: [
@@ -16,9 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
