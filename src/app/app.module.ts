@@ -8,10 +8,12 @@ import { BnkGirlComponent } from './components/bnk-girl/bnk-girl.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+import { InstagramComponent } from 'src/app/components/instagram/instagram.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'instagram', component: InstagramComponent}
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const routes: Routes = [
     AppComponent,
     DashboardComponent,
     BnkGirlListComponent,
-    BnkGirlComponent
+    BnkGirlComponent,
+    InstagramComponent
   ],
   imports: [
     BrowserModule,
