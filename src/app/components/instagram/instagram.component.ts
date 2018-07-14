@@ -19,7 +19,9 @@ export class InstagramComponent implements OnInit {
   getInstagram(id: string) {
     this.bnkService.instagram(id).subscribe((response: Feed) => {
       if(response.feeds){
-        this.feeds = response.feeds;
+        this.feeds = response.feeds.filter((i) => {
+          return i.thumbnail.endsWith('.jpg');
+        });
       }
     });
   }
