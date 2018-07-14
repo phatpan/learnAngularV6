@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-instagram',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstagramComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.route.snapshot.params.instagramId);
   }
 
 }

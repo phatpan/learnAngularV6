@@ -3,7 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BnkGirlListComponent } from './bnk-girl-list.component';
 import { BnkService } from 'src/app/services/bnk.service';
 import { HttpClientModule } from '../../../../node_modules/@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA } from '../../../../node_modules/@angular/core';
+import {
+  HttpTestingController,
+  HttpClientTestingModule
+} from '@angular/common/http/testing';
 
 describe('BnkGirlListComponent', () => {
   let component: BnkGirlListComponent;
@@ -12,7 +15,8 @@ describe('BnkGirlListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BnkGirlListComponent ],
-      providers: [BnkService]
+      providers: [BnkService],
+      imports: [HttpClientModule, HttpClientTestingModule],
     })
     .compileComponents();
   }));
