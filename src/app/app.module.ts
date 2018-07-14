@@ -11,7 +11,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { InstagramComponent } from 'src/app/components/instagram/instagram.component';
 import { InstagramListComponent } from './components/instagram-list/instagram-list.component';
 import { InstagramItemComponent } from './components/instagram-item/instagram-item.component';
-import { BnkSuffixPipe } from './bnk-suffix.pipe';
+import { BnkSuffixPipe } from 'src/app/Pipes/bnk-suffix.pipe';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
