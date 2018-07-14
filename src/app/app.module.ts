@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BnkGirlListComponent } from './components/bnk-girl-list/bnk-girl-list.component';
 import { BnkGirlComponent } from './components/bnk-girl/bnk-girl.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BnkGirlComponent } from './components/bnk-girl/bnk-girl.component';
     BnkGirlComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
