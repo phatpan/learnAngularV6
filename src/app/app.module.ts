@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { InstagramComponent } from 'src/app/components/instagram/instagram.component';
 import { InstagramListComponent } from './components/instagram-list/instagram-list.component';
+import { InstagramItemComponent } from './components/instagram-item/instagram-item.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
@@ -24,7 +25,8 @@ const routes: Routes = [
     BnkGirlListComponent,
     BnkGirlComponent,
     InstagramComponent,
-    InstagramListComponent
+    InstagramListComponent,
+    InstagramItemComponent
   ],
   imports: [
     BrowserModule,

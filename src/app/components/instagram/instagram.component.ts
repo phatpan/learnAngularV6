@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { BnkService } from 'src/app/services/bnk.service';
+import { Feed, FeedItem } from 'src/app/models/feed';
 
 @Component({
   selector: 'app-instagram',
@@ -7,11 +9,19 @@ import { ActivatedRoute } from '../../../../node_modules/@angular/router';
   styleUrls: ['./instagram.component.css']
 })
 export class InstagramComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
+  feeds: FeedItem[];
+  constructor(private route: ActivatedRoute, private bnkService: BnkService) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.params.instagramId);
+    this.getInstagram(this.route.snapshot.params.instagramId);
+  }
+
+  getInstagram(id: string) {
+    this.bnkService.instagram(id).subscribe((response: Feed) => {
+      if(response.feeds){
+        this.feeds = response.feeds;
+      }
+    });
   }
 
 }
