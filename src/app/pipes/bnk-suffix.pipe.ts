@@ -5,7 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BnkSuffixPipe implements PipeTransform {
 
-  transform(value: string, args?: any): any {
+  transform(value: string, letterCase: string): any {
+    if (letterCase === 'lower') {
+      return value.toLocaleLowerCase() + '/BNK48';
+    }
     return value.toLocaleUpperCase() + '/BNK48';
   }
 

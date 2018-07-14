@@ -1,6 +1,6 @@
 <div class="card">
   <img class="card-img-top" [src]="feedItem.thumbnail" >
   <div class="card-body">
-    <h4 class="card-title">{{feedItem.title | bnkSuffix}}</h4>
+    <h4 class="card-title">{{feedItem.username | bnkSuffix: 'lower'}}</h4>
   </div>
 </div>

@@ -7,11 +7,10 @@ import { BnkGirlListComponent } from './components/bnk-girl-list/bnk-girl-list.c
 import { BnkGirlComponent } from './components/bnk-girl/bnk-girl.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { InstagramComponent } from 'src/app/components/instagram/instagram.component';
 import { InstagramListComponent } from './components/instagram-list/instagram-list.component';
 import { InstagramItemComponent } from './components/instagram-item/instagram-item.component';
-import { BnkSuffixPipe } from 'src/app/Pipes/bnk-suffix.pipe';
+import { BnkSuffixPipe } from 'src/app/pipes/bnk-suffix.pipe';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
