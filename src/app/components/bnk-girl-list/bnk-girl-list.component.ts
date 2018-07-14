@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/models/member';
-import { MemberService } from '../../services/member.service';
+import { BnkService } from 'src/app/services/bnk.service';
 
 @Component({
   selector: 'app-bnk-girl-list',
-  providers: [MemberService],
   templateUrl: './bnk-girl-list.component.html',
   styleUrls: ['./bnk-girl-list.component.css']
 })
 export class BnkGirlListComponent implements OnInit {
   members: Member[];
-  constructor(private memberService: MemberService) { }
+  constructor(private bnkService: BnkService) { }
 
   ngOnInit() {
     this.getMembers();
   }
 
   getMembers() {
-    this.memberService.getMembers().subscribe((response: Member[])=>{
+    this.bnkService.list().subscribe((response: Member[])=>{
       this.members = response;
     });
   }
