@@ -1,3 +1,8 @@
-<p>
-  bnk-girl-list works!
-</p>
+<div class="container">
+  <div class="row">
+      <div *ngFor="let member of members" class="col-3">
+          <app-bnk-girl [member]="member"></app-bnk-girl>
+      </div>
+  </div>
+</div>
+

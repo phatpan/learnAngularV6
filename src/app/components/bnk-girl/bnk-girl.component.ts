@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Member } from 'src/app/models/member';
 
 @Component({
   selector: 'app-bnk-girl',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bnk-girl.component.css']
 })
 export class BnkGirlComponent implements OnInit {
-
+  @Input() member: Member;
   constructor() { }
 
   ngOnInit() {
