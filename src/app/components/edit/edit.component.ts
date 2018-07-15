@@ -33,8 +33,7 @@ export class EditComponent implements OnInit {
 
   update() {
     if (this.adminForm.valid) {
-      const member: Member = this.adminForm.value;
-      this.bnkService.update(member).subscribe((response) => {
+      this.bnkService.update(this.adminForm.value).subscribe(() => {
         this.router.navigate(["/admin"]);
       });
     }
