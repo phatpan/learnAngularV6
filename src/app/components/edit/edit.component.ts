@@ -3,15 +3,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BnkService } from '../../services/bnk.service';
 import { Member } from '../../models/member';
-import { UrlValidator } from 'src/app/validators/url.validator';
+import { UrlValidator } from '../../validators/url.validator';
 
 @Component({
-  selector: 'app-admin-action',
-  templateUrl: './admin-action.component.html',
-  styleUrls: ['./admin-action.component.css']
+  selector: 'app-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
-export class AdminActionComponent implements OnInit {
-  adminForm: FormGroup
+export class EditComponent implements OnInit {
+  adminForm: FormGroup;
   member: Member;
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,10 +20,10 @@ export class AdminActionComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.getAdmin();
+    this.admin();
   }
 
-  getAdmin() {
+  admin() {
     this.bnkService.admin(this.activatedRoute.snapshot.params.id).subscribe((response) => {
       this.member = response;
       this.adminForm = this.fb.group({

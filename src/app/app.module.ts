@@ -14,7 +14,7 @@ import { BnkSuffixPipe } from './Pipes/bnk-suffix.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ReactiveFormsModule } from "@angular/forms";
-import { AdminActionComponent } from './components/admin-action/admin-action.component';
+import { EditComponent } from './components/edit/edit.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AuthGuard } from './guard/auth.guard';
 import { HeaderComponent } from './components/header/header.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'instagram/:instagramId', component: InstagramComponent},
   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-  { path: 'admin/:id', component: AdminActionComponent, canActivate: [AuthGuard]}
+  { path: 'admin/edit/:id', component: EditComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -40,7 +40,7 @@ const routes: Routes = [
     BnkSuffixPipe,
     LoginComponent,
     AdminComponent,
-    AdminActionComponent,
+    EditComponent,
     HeaderComponent
   ],
   imports: [
