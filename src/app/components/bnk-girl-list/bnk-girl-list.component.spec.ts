@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BnkGirlListComponent } from './bnk-girl-list.component';
-import { BnkService } from 'src/app/services/bnk.service';
-import { HttpClientModule } from '../../../../node_modules/@angular/common/http';
+import { BnkService } from '../../services/bnk.service';
+import { HttpClientModule } from '@angular/common/http';
 import {
   HttpTestingController,
   HttpClientTestingModule

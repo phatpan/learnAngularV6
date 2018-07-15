@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Member } from 'src/app/models/member';
-import { BnkService } from 'src/app/services/bnk.service';
+import { Member } from '../../models/member';
+import { BnkService } from '../../services/bnk.service';
 
 @Component({
   selector: 'app-bnk-girl-list',

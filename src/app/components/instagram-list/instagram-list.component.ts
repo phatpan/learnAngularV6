@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Feed, FeedItem } from 'src/app/models/feed';
-import { ThrowStmt } from '../../../../node_modules/@angular/compiler';
+import { Feed, FeedItem } from '../../models/feed';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-instagram-list',

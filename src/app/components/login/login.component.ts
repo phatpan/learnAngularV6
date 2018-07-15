@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
 
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   login() {
     const loginModel: User = this.loginForm.getRawValue();
     this.authenticationService.authLogin(loginModel).subscribe((response) => {
+      console.log(response);
       this.router.navigate(["/admin"]);
     });
   }

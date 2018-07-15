@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Member } from 'src/app/models/member';
-import { Feed } from 'src/app/models/feed';
+import { Member } from '../models/member';
+import { Feed } from '../models/feed';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -18,5 +18,9 @@ export class BnkService {
 
   instagram(id: string): Observable<Feed>{
     return this.http.get<Feed>(`${environment.instagram_url}${id}`);
+  }
+
+  admin(id: string):Observable<Member> {
+    return this.http.get<Member>(`${environment.api_url}/bnk/members/${id}`);
   }
 }

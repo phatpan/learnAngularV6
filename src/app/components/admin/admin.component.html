@@ -15,7 +15,7 @@
           <td>{{member.imgUrl}}</td>
           <td>{{member.instagramId}}</td>
           <td>
-            <button type="button" class="btn btn-primary">Edit</button>
+            <a [routerLink]="['/admin', member._id]">Edit</a>
           </td>
         </tr>
       </tbody>

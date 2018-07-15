@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '../../../../node_modules/@angular/router';
-import { BnkService } from 'src/app/services/bnk.service';
-import { Feed, FeedItem } from 'src/app/models/feed';
+import { ActivatedRoute } from '@angular/router';
+import { BnkService } from '../../services/bnk.service';
+import { Feed, FeedItem } from '../../models/feed';
 
 @Component({
   selector: 'app-instagram',
