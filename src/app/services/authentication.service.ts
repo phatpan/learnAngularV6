@@ -14,8 +14,4 @@ export class AuthenticationService {
   authLogin(data: User): Observable<String>{
     return this.http.post<String>(`${environment.api_url}/auth/login`, data);
   }
-
-  login(data: User): Observable<String>{
-    return this.http.post<String>(`${environment.api_url}/users`, data);
-  }
 }

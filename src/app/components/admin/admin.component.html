@@ -1,3 +1,23 @@
-<p>
-  admin works!
-</p>
+<div class="container">
+    <h2>BNK48</h2>      
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image URL</th>
+          <th>Instagram ID</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let member of members">
+        <tr>
+          <td>{{member.name}}</td>
+          <td>{{member.imgUrl}}</td>
+          <td>{{member.instagramId}}</td>
+          <td>
+            <button type="button" class="btn btn-primary">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
