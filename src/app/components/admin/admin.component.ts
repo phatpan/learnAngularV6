@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BnkService } from '../../services/bnk.service';
-import { Member } from '../../models/member';
+import { BnkService } from 'src/app/services/bnk.service';
+import { Member } from 'src/app/models/member';
 
 @Component({
   selector: 'app-admin',
