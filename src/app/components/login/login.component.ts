@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, 
+  constructor(private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
     private router: Router) { }
 
@@ -23,11 +23,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const loginModel: User = this.loginForm.getRawValue();
-    this.authenticationService.authLogin(loginModel).subscribe((response) => {
-      this.authenticationService.setToken(response["token"]);
-      this.router.navigate(["/admin"]);
-    });
+    if (this.loginForm.valid) {
+      const loginModel: User = this.loginForm.getRawValue();
+      this.authenticationService.authLogin(loginModel).subscribe((response) => {
+        this.authenticationService.setToken(response["token"]);
+        this.router.navigate(["/admin"]);
+      });
+    }
   }
 
 }

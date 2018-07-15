@@ -5,3 +5,6 @@
     display: table-cell;
     vertical-align: middle;
 }
+.text-red{
+    color: red;
+}

@@ -1,18 +1,20 @@
 
-<div class="container container-table">
-  <h1>เข้าสู่ระบบ</h1>
-  <div class="row">
-      <form [formGroup]="loginForm">
-          <div class="form-group">
-            <label for="login">ชื่อผู้ใช้ : </label>
-            <input type="text" id="login" class="form-control" formControlName="login" placeholder="ชื่อผู้ใช้งาน" required>
-          </div>
-          <div class="form-group">
-              <label for="password">รหัสผ่าน : </label>
-              <input type="text" id="password" class="form-control" formControlName="password" placeholder="รหัสผ่าน" required>
-          </div>
-          <button type="submit" (click)="login()" class="btn btn-primary">เข้าสู่ระบบ</button>
-      </form>
-  </div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+                <h1>เข้าสู่ระบบ</h1>
+                <form [formGroup]="loginForm" class="form">
+                    <div class="form-group">
+                        <label for="login">ชื่อผู้ใช้ : </label>
+                        <input type="text" id="login" class="form-control" formControlName="login" placeholder="ชื่อผู้ใช้งาน" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">รหัสผ่าน : </label>
+                        <input type="text" id="password" class="form-control" formControlName="password" placeholder="รหัสผ่าน" required>
+                    </div>
+                    <button type="submit" (click)="login()"  class="btn btn-primary">เข้าสู่ระบบ</button>
+                </form>
+        </div>
+    </div>
 </div>
 
