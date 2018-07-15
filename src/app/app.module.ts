@@ -15,7 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AdminActionComponent } from './components/admin-action/admin-action.component';
-import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AuthGuard } from './guard/auth.guard';
 import { HeaderComponent } from './components/header/header.component';
 

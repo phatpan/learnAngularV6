@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
-import { FormGroup, FormBuilder, Validators } from '../../../../node_modules/@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BnkService } from '../../services/bnk.service';
-import { Member } from 'src/app/models/member';
+import { Member } from '../../models/member';
+import { UrlValidator } from 'src/app/validators/url.validator';
 
 @Component({
   selector: 'app-admin-action',
@@ -25,10 +26,11 @@ export class AdminActionComponent implements OnInit {
   getAdmin() {
     this.bnkService.admin(this.activatedRoute.snapshot.params.id).subscribe((response) => {
       this.member = response;
+      console.log(response);
       this.adminForm = this.fb.group({
         _id: [response._id, Validators.required],
         name: [response.name, Validators.required],
-        imgUrl: [response.imgUrl, Validators.required],
+        imgUrl: [response.imgUrl, [Validators.required, UrlValidator.validate]],
         instagramId: [response.instagramId, Validators.required]
       });
     });
@@ -40,7 +42,9 @@ export class AdminActionComponent implements OnInit {
       this.bnkService.update(member).subscribe((response) => {
         this.router.navigate(["/admin"]);
       });
-    } 
+    } else {
+     // console.log(this.adminForm.get('imgUrl').getError('url'));
+    }
   }
 
   reset() {
