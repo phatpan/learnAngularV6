@@ -42,8 +42,6 @@ export class AdminActionComponent implements OnInit {
       this.bnkService.update(member).subscribe((response) => {
         this.router.navigate(["/admin"]);
       });
-    } else {
-     // console.log(this.adminForm.get('imgUrl').getError('url'));
     }
   }
 
