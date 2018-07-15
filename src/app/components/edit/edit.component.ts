@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { BnkService } from '../../services/bnk.service';
-import { Member } from '../../models/member';
-import { UrlValidator } from '../../validators/url.validator';
+import { Member } from 'src/app/models/member';
+import { BnkService } from 'src/app/services/bnk.service';
+import { UrlValidator } from 'src/app/validators/url.validator';
+
 
 @Component({
   selector: 'app-edit',
