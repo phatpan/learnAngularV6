@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Member } from '../../models/member';
+import { Member } from 'src/app/models/member';
 
 @Component({
   selector: 'app-bnk-girl',
