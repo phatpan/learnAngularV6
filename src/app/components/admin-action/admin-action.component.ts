@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
 import { FormGroup, FormBuilder } from '../../../../node_modules/@angular/forms';
 import { BnkService } from '../../services/bnk.service';
 import { Member } from 'src/app/models/member';
@@ -12,7 +12,11 @@ import { Member } from 'src/app/models/member';
 export class AdminActionComponent implements OnInit {
   adminForm: FormGroup
   member: Member;
-  constructor(private route: ActivatedRoute, private fb: FormBuilder, private bnkService: BnkService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private fb: FormBuilder, 
+    private bnkService: BnkService,
+    private router: Router) { }
 
   ngOnInit() {
     this.adminForm = this.fb.group({
@@ -25,7 +29,7 @@ export class AdminActionComponent implements OnInit {
   }
 
   getAdmin() {
-    this.bnkService.admin(this.route.snapshot.params.id).subscribe((response) => {
+    this.bnkService.admin(this.activatedRoute.snapshot.params.id).subscribe((response) => {
       this.member = response;
       this.adminForm.setValue(response);
     });
@@ -34,7 +38,7 @@ export class AdminActionComponent implements OnInit {
   update() {
     const member: Member = this.adminForm.getRawValue();
     this.bnkService.update(member).subscribe((response) => {
-      console.log(response);
+      this.router.navigate(["/admin"]);
     });
   }
 
