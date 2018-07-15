@@ -23,4 +23,8 @@ export class BnkService {
   admin(id: string):Observable<Member> {
     return this.http.get<Member>(`${environment.api_url}/bnk/members/${id}`);
   }
+
+  update(data: Member):Observable<Member> {
+    return this.http.patch<Member>(`${environment.api_url}/bnk/members/${data._id}`, data);
+  }
 }

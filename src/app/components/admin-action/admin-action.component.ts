@@ -31,6 +31,13 @@ export class AdminActionComponent implements OnInit {
     });
   }
 
+  update() {
+    const member: Member = this.adminForm.getRawValue();
+    this.bnkService.update(member).subscribe((response) => {
+      console.log(response);
+    });
+  }
+
   reset() {
     this.adminForm.reset(this.member);
   }

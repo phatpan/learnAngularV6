@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   login() {
     const loginModel: User = this.loginForm.getRawValue();
     this.authenticationService.authLogin(loginModel).subscribe((response) => {
-      console.log(response);
+      this.authenticationService.setToken(response["token"]);
       this.router.navigate(["/admin"]);
     });
   }

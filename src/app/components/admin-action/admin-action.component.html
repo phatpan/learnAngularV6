@@ -15,7 +15,7 @@
                 <label for="instagramId">Instagram Id : </label>
                 <input type="text" id="instagramId" class="form-control" formControlName="instagramId" placeholder="Instagram Id" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" (click)="update()" class="btn btn-primary">Submit</button>
             <button type="button" (click)="reset()" class="btn btn-primary">Reset</button>
         </form>
     </div>
