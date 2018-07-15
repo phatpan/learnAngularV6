@@ -23,4 +23,8 @@ export class AuthenticationService {
   getToken(): string {
     return this.token;
   }
+
+  isLogin(): boolean{
+    return !!this.token;
+  }
 }

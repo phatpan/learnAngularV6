@@ -16,14 +16,16 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AdminActionComponent } from './components/admin-action/admin-action.component';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { AuthGuard } from './guard/auth.guard';
+import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard'},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'instagram/:instagramId', component: InstagramComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'admin', component: AdminComponent},
-  { path: 'admin/:id', component: AdminActionComponent}
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  { path: 'admin/:id', component: AdminActionComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const routes: Routes = [
     BnkSuffixPipe,
     LoginComponent,
     AdminComponent,
-    AdminActionComponent
+    AdminActionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
