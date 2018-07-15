@@ -20,10 +20,6 @@ export class EditComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.admin();
-  }
-
-  admin() {
     this.bnkService.admin(this.activatedRoute.snapshot.params.id).subscribe((response) => {
       this.member = response;
       this.adminForm = this.fb.group({
