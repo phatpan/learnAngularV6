@@ -1,26 +1,28 @@
-
-<div class="container container-table">
-    <h1>BNK48</h1>
-    <div class="row">
-        <form [formGroup]="adminForm" *ngIf="adminForm">
-            <div class="form-group">
-              <label for="name">Name : </label>
-              <input type="text" id="name" class="form-control" formControlName="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <label for="imgUrl">Image Url : </label>
-                <input type="text" id="imgUrl" class="form-control" formControlName="imgUrl" placeholder="Image Url">
-                <span *ngIf="adminForm.get('imgUrl').getError('required')" class="required text-red">required</span>
-                <span *ngIf="adminForm.get('imgUrl').getError('url')" class="required text-red"> Url </span>
-            </div>
-            <div class="form-group">
-                <label for="instagramId">Instagram Id : </label>
-                <input type="text" id="instagramId" class="form-control" formControlName="instagramId" placeholder="Instagram Id">
-            </div>
-            <button type="submit" (click)="update()" class="btn btn-primary">Submit</button>
-            <button type="button" (click)="reset()" class="btn btn-primary">Reset</button>
-        </form>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="adminForm" *ngIf="adminForm">
+                <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" id="name" class="form-control" formControlName="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="imgUrl">Image Url : </label>
+                    <input type="text" id="imgUrl" class="form-control" formControlName="imgUrl" placeholder="Image Url">
+                    <span *ngIf="adminForm.get('imgUrl').getError('required')" class="required text-red">required</span>
+                    <span *ngIf="adminForm.get('imgUrl').getError('url')" class="required text-red"> Url </span>
+                </div>
+                <div class="form-group">
+                    <label for="instagramId">Instagram Id : </label>
+                    <input type="text" id="instagramId" class="form-control" formControlName="instagramId" placeholder="Instagram Id">
+                </div>
+                <div class="form-group">
+                    <button type="submit" (click)="update()" class="btn btn-primary">Submit</button>&nbsp;
+                    <button type="button" (click)="reset()" class="btn btn-danger">Reset</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
+</div>
   
   
