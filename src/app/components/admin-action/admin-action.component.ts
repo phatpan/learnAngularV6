@@ -26,7 +26,6 @@ export class AdminActionComponent implements OnInit {
   getAdmin() {
     this.bnkService.admin(this.activatedRoute.snapshot.params.id).subscribe((response) => {
       this.member = response;
-      console.log(response);
       this.adminForm = this.fb.group({
         _id: [response._id, Validators.required],
         name: [response.name, Validators.required],

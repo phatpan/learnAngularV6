@@ -6,6 +6,6 @@ export class UrlValidator {
         if(url.startsWith('http://') || url.startsWith("https://")){
             return null;
         }
-        return { 'url': 'XXXX'}
+        return { 'url': 'เฮ้ยกรอก URL ผิดน๊าาา'}
     }
 }
