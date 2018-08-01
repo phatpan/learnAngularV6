@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InstagramComponent } from './components/instagram/instagram.component';
 import { InstagramListComponent } from './components/instagram-list/instagram-list.component';
 import { InstagramItemComponent } from './components/instagram-item/instagram-item.component';
-import { BnkSuffixPipe } from './Pipes/bnk-suffix.pipe';
+import { BnkSuffixPipe } from './pipes/bnk-suffix.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ReactiveFormsModule } from "@angular/forms";
